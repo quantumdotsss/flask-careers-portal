@@ -1,16 +1,22 @@
-[tool.poetry]
-name = "repl-nix-careers-webite"
-version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
-readme = "README.md"
-packages = [{include = "repl_nix_careers_webite"}]
-
-[tool.poetry.dependencies]
-python = "^3.10"
-flask = "^3.0.2"
-
-
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flask-careers-portal"
+version = "1.0.0"
+description = "A recruiter-facing Flask careers portal with a filterable jobs API"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "quantumdotsss" }]
+dependencies = [
+  "Flask>=3.0,<4",
+  "gunicorn>=21,<24",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
