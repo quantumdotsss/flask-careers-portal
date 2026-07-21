@@ -1,26 +1,19 @@
-<div class="border-bottom row" style = "margin-bottom: 16px; padding-bottom: 8px;">
-  <div class = "col-9">
-   <h4 
-     style = "color:rgb(120, 120, 120); margin-bottom: 4px;">
-     {{ job['title'] }}
-   </h4>
-   <div> 
-     <b>
-       Location
-     </b>: {{job['location']}}
-   </div>
-   {% if 'salary' in job %}
-    <div> 
-      <b>Salary</b>: {{job['salary']}} 
-    </div>
-   {% endif %}
-    </div>
-    <div class = "col-3">
-      <a herf="https://www.youtube.com/" type="button" class="btn btn-primary">Apply</a>
-      <!-- <a href="https://www.w3schools.com/"type="button" class="btn btn-primary">Apply</a> -->
-
-
-      </div>
-
-
- </div>
+<article class="role-card" id="job-{{ job.id }}">
+  <div class="role-topline">
+    <span class="department">{{ job.department }}</span>
+    <span class="role-id">#{{ "%02d"|format(job.id) }}</span>
+  </div>
+  <h3>{{ job.title }}</h3>
+  <p class="role-summary">{{ job.summary }}</p>
+  <div class="role-meta">
+    <span>{{ job.location }}</span>
+    <span>{{ job.employment_type }}</span>
+    <span>{{ job.salary }}</span>
+  </div>
+  <ul class="skill-list" aria-label="Skills">
+    {% for skill in job.skills %}<li>{{ skill }}</li>{% endfor %}
+  </ul>
+  <a class="role-link" href="{{ url_for('job_detail', job_id=job.id) }}">
+    View API record <span aria-hidden="true">→</span>
+  </a>
+</article>

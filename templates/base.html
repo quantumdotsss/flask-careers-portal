@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="TalentFlow is a portfolio-ready Flask careers portal with a filterable jobs API.">
+    <meta name="theme-color" content="#08111f">
+    <title>{% block title %}TalentFlow Careers{% endblock %}</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    {% include "nav.html" %}
+    <main>{% block content %}{% endblock %}</main>
+    {% include "footer.html" %}
+  </body>
+</html>
