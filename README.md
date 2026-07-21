@@ -9,6 +9,12 @@ container-ready deployment.**
 [![Tests](https://img.shields.io/badge/tests-pytest-success.svg)](tests)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+![TalentFlow Flask careers portal — desktop product preview](docs/talentflow-product-preview.png)
+
+**My contribution:** I rebuilt this project from a basic Flask prototype into
+a tested, container-ready recruiting portal—covering backend routes, reusable
+Jinja UI, API filtering, responsive CSS, CI, and Docker deployment.
+
 TalentFlow turns an early Flask experiment into a small, complete recruiting
 product. The same fictional job model powers a polished server-rendered UI
 and REST-style API endpoints, with explicit privacy boundaries and no
